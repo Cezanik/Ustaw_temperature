@@ -229,7 +229,7 @@ namespace Ustaw_temperature.Controllers
                 return Forbid(); // Zwraca 403 Forbidden
             }
             var przypisaniUzytkownicy = _context.Mieszkanie
-            .Select(d => d.Uzytkownik)
+            .Select(d => d.Uzytkownik2)
             .ToList();
             var filteredUsers = await _context.Users
             .Where(user => user.Id != uzytkownikAktualny && !przypisaniUzytkownicy.Contains(user.Id))
